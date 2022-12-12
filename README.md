@@ -12,7 +12,7 @@ Download and create a virtual environment:
     mkvirtualenv -p python3 googlephotos (_or any other name_)
     pip install -r requirements.txt
     python ./gp.py -?
-    
+
 *Note: On on Windows use Python 3.8 version max to avoid legacy-install-failure error while trying to install package `cffi`*
 
 ## Configuration
@@ -86,7 +86,11 @@ messages use:
 
 __Notes:__
 - The script will ONLY upload files with a JPG extension (it is not case sensitive).
-- The script can easily be modified to accommodate other files, the JPG limitation is just a personal requirement
+- The script can easily be modified to accommodate other files, the JPG limitation is just a personal requirement (function `check_files`: `if ext in [".JPG", ".MP4", ".MOV", ...`)
+- Following extensions file types are supported by Google Photos APIs:
+	- Photos (max 200 MB): BMP, GIF, HEIC, ICO, JPG, PNG, TIFF, WEBP, some RAW files.
+	- Videos (max 10 GB):	3GP, 3G2, ASF, AVI, DIVX, M2T, M2TS, M4V, MKV, MMV, MOD, MOV, MP4, MPG, MTS, TOD, WMV.
+	source: https://developers.google.com/photos/library/guides/upload-media
 - The SQLite database is called GDriveimages, and is created in the folder where the script is located
 
 
